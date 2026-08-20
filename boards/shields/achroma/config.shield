@@ -1,0 +1,2 @@
+Config SHIELD_ACHROMA
+	def_bool $(shields_list_contains,achroma)
