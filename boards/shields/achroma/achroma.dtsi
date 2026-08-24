@@ -23,7 +23,7 @@
             RC(2,4) RC(2,2) RC(2,0) RC(2,1) RC(2,3)   RC(2,5) RC(2,6) RC(2,7) RC(2,8) RC(2,9)
             
             // Fixed Bottom Thumb Row: 3 keys left, 2 spacers, 3 keys right
-            RC(3,4) RC(3,2) RC(3,0) RC_UNUSED             RC_UNUSED RC(3,5) RC(3,7) RC(3,9)
+            RC(3,4) RC(3,2) RC(3,0)                                   RC(3,5) RC(3,7) RC(3,9)
         >;
     };
 };
