@@ -1,0 +1,6 @@
+
+config SHIELD_ACHROMA_LEFT
+    def_bool $(shields_list_contains,achroma_left)
+
+config SHIELD_ACHROMA_RIGHT
+    def_bool $(shields_list_contains,achroma_right)

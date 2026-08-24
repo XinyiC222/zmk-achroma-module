@@ -1,0 +1,12 @@
+file_format: "1"
+id: achroma
+name: Achroma
+type: shield
+url: https://github.com/XinyiC222/zmk-achroma-module
+requries: [pro_micro]
+exposes: []
+features:
+  - keys
+siblings:
+  - achroma_left
+  - achroma_right
