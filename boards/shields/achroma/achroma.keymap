@@ -5,11 +5,15 @@
 #include <dt-bindings/zmk/ext_power.h>
 
 / {
+    chosen {
+        zmk,physical-layout = &physical_layout_split;
+    };
+
     keymap {
         compatible = "zmk,keymap";
 
         // Layer 0: QWERTY layout
-        default _layer {
+        default_layer {
             bindings = <
                 // Left Side Upper Rows                         Right Side Upper Rows
                 &kp Q      &kp W      &kp E      &kp R      &kp T         &kp Y     &kp U      &kp I      &kp O      &kp P
@@ -20,7 +24,8 @@
                 &kp LCTRL  &kp LSHIFT &lt LOWER SPACE                 &lt RAISE BSPC &kp ENTER &kp RALT
             >;
         };
-        // numbers and symbols
+
+        // Layer 1: Numbers and symbols
         lower_layer {
             bindings = <
                 &kp N1     &kp N2     &kp N3     &kp N4     &kp N5        &kp N6    &kp N7     &kp N8     &kp N9     &kp N0
@@ -43,5 +48,5 @@
                 &trans     &trans     &kp SPACE                                &trans    &trans     &trans
             >;
         };
-    }
-}
+    };
+};
