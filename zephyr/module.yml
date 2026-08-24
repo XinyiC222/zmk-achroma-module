@@ -1,6 +1,4 @@
-name: zmk-achroma-module
+name: zmk-keyboard-achroma
 build:
   settings:
     board_root: .
-    dts_root: .
-    snippet_root: .
