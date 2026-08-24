@@ -1,9 +1,9 @@
 #include "achroma.dtsi"
 
 &physical_layout_split {
+    kscan = <&kscan0>; // Safely links to the node defined right below
     col-offset = <5>;
 };
-
 / {
     kscan0: kscan_0 {
         compatible = "zmk,kscan-gpio-matrix";
