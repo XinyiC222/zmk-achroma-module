@@ -1,8 +1,30 @@
 #include <dt-bindings/zmk/matrix_transform.h>
 
 / {
+    kscan0: kscan0 {
+        compatible = "zmk,kscan-gpio-matrix";
+        diode-direction = "col2row";
+        wakeup-source;
+
+        col-gpios
+            = <&gpio0 17 GPIO_ACTIVE_HIGH>
+            , <&gpio0 18 GPIO_ACTIVE_HIGH>
+            , <&gpio0 19 GPIO_ACTIVE_HIGH>
+            , <&gpio0 20 GPIO_ACTIVE_HIGH>
+            , <&gpio0 21 GPIO_ACTIVE_HIGH>
+            ;
+
+        row-gpios
+            = <&gpio0 5  (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
+            , <&gpio0 7  (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
+            , <&gpio0 11 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
+            , <&gpio0 12 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
+            ;
+    };
+
     default_transform: keymap_transform_0 {
         compatible = "zmk,matrix-transform";
+
         columns = <5>;
         rows = <4>;
 
@@ -12,5 +34,18 @@
             RC(2,4) RC(2,2) RC(2,0) RC(2,1) RC(2,3)
             RC(3,4) RC(3,2) RC(3,0)
         >;
+    };
+
+    physical_layout_split: physical_layout_0 {
+        compatible = "zmk,physical-layout";
+        display-name = "Achroma";
+
+        kscan = <&kscan0>;
+        transform = <&default_transform>;
+    };
+
+    chosen {
+        zmk,kscan = &kscan0;
+        zmk,physical-layout = &physical_layout_split;
     };
 };

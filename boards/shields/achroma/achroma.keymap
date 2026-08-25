@@ -5,50 +5,47 @@
 #include <dt-bindings/zmk/ext_power.h>
 
 / {
-    chosen {
-        zmk,physical-layout = &physical_layout_split;
-    };
-
     keymap {
         compatible = "zmk,keymap";
 
-        // Layer 0: QWERTY layout
+        // Layer 0: QWERTY
         default_layer {
             display-name = "Base";
+
             bindings = <
-                // Left Side Upper Rows                         Right Side Upper Rows
-                &kp Q      &kp W      &kp E      &kp R      &kp T         &kp Y     &kp U      &kp I      &kp O      &kp P
-                &kp A      &kp S      &kp D      &kp F      &kp G         &kp H     &kp J      &kp K      &kp L      &kp SEMI
-                &kp Z      &kp X      &kp C      &kp V      &kp B         &kp N     &kp M      &kp COMMA  &kp DOT    &kp FSLH
-                
-                // Left Thumbs                                  Right Thumbs
-                &kp LCTRL  &kp LSHIFT &lt LOWER SPACE                 &lt RAISE BSPC &kp ENTER &kp RALT
+                // Left                                      Right
+                &kp Q       &kp W       &kp E       &kp R       &kp T       &kp Y       &kp U       &kp I       &kp O       &kp P
+                &kp A       &kp S       &kp D       &kp F       &kp G       &kp H       &kp J       &kp K       &kp L       &kp SEMI
+                &kp Z       &kp X       &kp C       &kp V       &kp B       &kp N       &kp M       &kp COMMA   &kp DOT     &kp FSLH
+
+                // Thumbs
+                &kp LCTRL   &kp LSHIFT  &lt LOWER SPACE                         &lt RAISE BSPC &kp ENTER   &kp RALT
             >;
         };
 
         // Layer 1: Numbers and symbols
-            display-name = "Numbers";
         lower_layer {
+            display-name = "Numbers";
+
             bindings = <
-                &kp N1     &kp N2     &kp N3     &kp N4     &kp N5        &kp N6    &kp N7     &kp N8     &kp N9     &kp N0
-                &kp EXCL   &kp AT     &kp HASH   &kp DLLR   &kp PRCNT     &kp CARET &kp AMPS   &kp ASTRK  &kp LPAR   &kp RPAR
-                &bt BT_CLR &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &kp MINUS &kp EQUAL &kp LBKT  &kp RBKT   &kp BSLH
-                
-                // Thumbs match base layout or use &trans to let base layout pass through
-                &trans     &trans     &trans                                   &trans    &kp DEL    &trans
+                &kp N1       &kp N2       &kp N3       &kp N4       &kp N5       &kp N6       &kp N7       &kp N8       &kp N9       &kp N0
+                &kp EXCL     &kp AT        &kp HASH     &kp DLLR      &kp PRCNT    &kp CARET    &kp AMPS     &kp ASTRK    &kp LPAR     &kp RPAR
+                &bt BT_CLR   &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3 &kp MINUS    &kp EQUAL    &kp LBKT     &kp RBKT     &kp BSLH
+
+                &trans        &trans        &trans                                &trans       &kp DEL      &trans
             >;
         };
 
-        // Layer 2: Navigation, Editing
+        // Layer 2: Navigation and editing
         raise_layer {
-            display-name = "Navigation"
+            display-name = "Navigation";
+
             bindings = <
-                &kp ESC    &kp HOME   &kp UP     &kp END    &kp PG_UP     &kp C_VOL_UP &kp C_PP  &kp C_NEXT &kp INS   &kp CAPS
-                &kp TAB    &kp LEFT   &kp DOWN   &kp RIGHT  &kp PG_DN     &kp C_VOL_DN &kp LALT  &kp LCMD   &kp RCTRL &kp SQT
-                &kp C_MUTE &kp C_PREV &trans     &trans     &trans        &trans       &trans    &trans     &kp GRAVE &kp TILDE
-                
-                // Thumbs match base layout or use &trans to let base layout pass through
-                &trans     &trans     &kp SPACE                                &trans    &trans     &trans
+                &kp ESC       &kp HOME      &kp UP        &kp END       &kp PG_UP     &kp C_VOL_UP  &kp C_PP     &kp C_NEXT   &kp INS      &kp CAPS
+                &kp TAB       &kp LEFT      &kp DOWN      &kp RIGHT     &kp PG_DN     &kp C_VOL_DN  &kp LALT     &kp LCMD     &kp RCTRL    &kp SQT
+                &kp C_MUTE    &kp C_PREV    &trans        &trans        &trans        &trans        &trans       &trans       &kp GRAVE    &kp TILDE
+
+                &trans        &trans        &kp SPACE                              &trans       &trans       &trans
             >;
         };
     };

@@ -1,4 +1,3 @@
-
 config SHIELD_ACHROMA_LEFT
     def_bool $(shields_list_contains,achroma_left)
 
